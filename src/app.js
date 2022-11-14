@@ -1,10 +1,12 @@
-import express from 'express';
-import bodyParser from 'body-parser';
+const express = require('express');
+const bodyParser =  require('body-parser');
 
-export const app = express();
+const app = express();
 
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  return res.status(200).send({ messsage: 'REST API with Node.js, express and sequelize' });
+  return res.status(200).send({ message: 'REST API with Node.js, express and sequelize' });
 })
+
+module.exports = app;
