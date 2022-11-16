@@ -5,6 +5,7 @@ const router = Router();
 
 router
   .get('/pessoas', PessoaController.readAllPessoasAsync)
-  .get('/pessoas/:id', PessoaController.readPessoaByIdAsync);
+  .get('/pessoas/:id', PessoaController.readPessoaByIdAsync)
+  .post('/pessoas', PessoaController.createPessoaAsync);
 
 module.exports = router;

@@ -23,6 +23,16 @@ class PessoaController {
       return res.status(500).json(e.message);
     }
   }
+
+  static async createPessoaAsync(req, res) {
+    const pessoa = req.body;
+    try {
+      const createdPessoa = await models.Pessoas.create(pessoa);
+      return res.status(200).json(createdPessoa);
+    } catch (e) {
+      return res.status(500).json(e.message);
+    }
+  }
 }
 
 module.exports = PessoaController;
